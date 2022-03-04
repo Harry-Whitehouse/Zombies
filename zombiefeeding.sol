@@ -38,9 +38,9 @@ contract ZombieFeeding is ZombieFactory {
         uint256 newDna = (myZombie.dna + _targetDna) / 2; //from zombie struct in Zombie factory
         if (
             keccak256(abi.encodePacked(_species)) ==
-            keccak256(abi.encodePacked("kitty"))
+            keccak256(abi.encodePacked("kitty")) //checks that zombie ate kitty
         ) {
-            newDna = newDna - (newDna % 100) + 99;
+            newDna = newDna - (newDna % 100) + 99; //change last 2 digits to 99 based on if statement
         }
         _createZombie("NoName", newDna);
     }
@@ -48,6 +48,7 @@ contract ZombieFeeding is ZombieFactory {
     function feedOnKitty(uint256 _zombieId, uint256 _kittyId) public {
         uint256 kittyDna;
         (, , , , , , , , , kittyDna) = kittyContract.getKitty(_kittyId);
+        //storing "genes" the 10th variable of "getKitty" in "kittyDna"
         feedAndMultiply(_zombieId, kittyDna, "kitty");
     }
 }
