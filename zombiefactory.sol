@@ -12,13 +12,13 @@ contract ZombieFactory {
     }
     Zombie[] public zombies;
 
-    mapping(uint256 => address) public zombieToOwner;
-    mapping(address => uint256) ownerZombieCount;
+    mapping(uint256 => address) public zombieToOwner; //keeps track of the address that owns a zombie
+    mapping(address => uint256) ownerZombieCount; //keeps track of how many zombies an owner has.
 
     function _createZombie(string memory _name, uint256 _dna) internal {
         uint256 id = zombies.push(Zombie(_name, _dna)) - 1;
-        zombieToOwner[id] = msg.sender;
-        ownerZombieCount[msg.sender]++;
+        zombieToOwner[id] = msg.sender; //zombie owner address = msg.sender
+        ownerZombieCount[msg.sender]++; //msg.sender zombie count increases by 1
         emit NewZombie(id, _name, _dna);
     }
 

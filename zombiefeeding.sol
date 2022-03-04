@@ -21,8 +21,11 @@ contract KittyInterface {
 }
 
 contract ZombieFeeding is ZombieFactory {
-    address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d;
-    KittyInterface kittyContract = KittyInterface(ckAddress);
+    address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d; //address on ethereum
+
+    KittyInterface kittyContract = KittyInterface(ckAddress); //kitty contract points to interface above
+
+    //we can now call from the kittyInterface contract.
 
     function feedAndMultiply(
         uint256 _zombieId,
@@ -32,7 +35,7 @@ contract ZombieFeeding is ZombieFactory {
         require(msg.sender == zombieToOwner[_zombieId]);
         Zombie storage myZombie = zombies[_zombieId];
         _targetDna = _targetDna % dnaModulus;
-        uint256 newDna = (myZombie.dna + _targetDna) / 2;
+        uint256 newDna = (myZombie.dna + _targetDna) / 2; //from zombie struct in Zombie factory
         if (
             keccak256(abi.encodePacked(_species)) ==
             keccak256(abi.encodePacked("kitty"))
@@ -46,5 +49,5 @@ contract ZombieFeeding is ZombieFactory {
         uint256 kittyDna;
         (, , , , , , , , , kittyDna) = kittyContract.getKitty(_kittyId);
         feedAndMultiply(_zombieId, kittyDna, "kitty");
-    };
+    }
 }
