@@ -1,6 +1,8 @@
 pragma solidity >=0.5.0;
 
-contract ZombieFactory {
+import "./ownable.sol"
+
+contract ZombieFactory is Ownable {
     event NewZombie(uint256 zombieId, string name, uint256 dna);
 
     uint256 dnaDigits = 16;
@@ -9,6 +11,8 @@ contract ZombieFactory {
     struct Zombie {
         string name;
         uint256 dna;
+        uint32 level;
+        uint32 readyTime;
     }
     Zombie[] public zombies;
 

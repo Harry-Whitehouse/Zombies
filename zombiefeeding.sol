@@ -21,11 +21,20 @@ contract KittyInterface {
 }
 
 contract ZombieFeeding is ZombieFactory {
-    address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d; //address on ethereum
+    //commented out code could cause issues if ckaddress was affected.
 
-    KittyInterface kittyContract = KittyInterface(ckAddress); //kitty contract points to interface above
+    // address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d; //address on ethereum
 
-    //we can now call from the kittyInterface contract.
+    // KittyInterface kittyContract = KittyInterface(ckAddress); //kitty contract points to interface above
+
+    // //we can now call from the kittyInterface contract.
+
+    KittyInterface kittyContract; //declare the variable
+
+    function setKittyContractAddress(address _address) external ownerOnly {
+        //fucntion allows us to change the address in furture if required
+        kittyContract = KittyInterface(_address);
+    }
 
     function feedAndMultiply(
         uint256 _zombieId,
