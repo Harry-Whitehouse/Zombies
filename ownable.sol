@@ -34,7 +34,7 @@ contract Ownable {
      */
     modifier onlyOwner() {
         require(isOwner());
-        _;
+        _; //modifier must end with _; so it can call the function
     }
 
     /**

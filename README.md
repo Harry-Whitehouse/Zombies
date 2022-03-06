@@ -18,4 +18,7 @@ interacting with other contracts, handling multiple return values,
 https://share.cryptozombies.io/en/lesson/2/share/Greg?id=Y3p8MTkwNjQ0
 
 05/03 advanced solidity concepts:
-immutability, ownable contracts, modifiers, gas, time units
+immutability, ownable contracts, modifiers, gas, time units,
+
+06/03 advanced solidity cont..:
+passing structs as arguments, view functions,
