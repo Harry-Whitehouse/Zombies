@@ -17,8 +17,13 @@ interacting with other contracts, handling multiple return values,
 
 https://share.cryptozombies.io/en/lesson/2/share/Greg?id=Y3p8MTkwNjQ0
 
-05/03 advanced solidity concepts:
+05/03 lesson 3: advanced solidity concepts:
 immutability, ownable contracts, modifiers, gas, time units,
 
 06/03 advanced solidity cont..:
 passing structs as arguments, view functions,
+
+07/03 AS cont..:
+storage cost, for loops, redid lesson 3 to make sure i hadnt missed anything as i hadnt had much time to work on it properly.
+
+https://share.cryptozombies.io/en/lesson/3/share/Greg?id=Y3p8MTkwNjQ0
