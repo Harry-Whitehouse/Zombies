@@ -32,7 +32,7 @@ contract ZombieFeeding is ZombieFactory {
     KittyInterface kittyContract; //declare the variable
 
     function setKittyContractAddress(address _address) external ownerOnly {
-        //fucntion allows us to change the address in furture if required
+        //fucntion allows the owner(contract deployer) to change the address in furture if required
         kittyContract = KittyInterface(_address);
     }
 

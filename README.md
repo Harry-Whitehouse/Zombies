@@ -27,3 +27,5 @@ passing structs as arguments, view functions,
 storage cost, for loops, redid lesson 3 to make sure i hadnt missed anything as i hadnt had much time to work on it properly.
 
 https://share.cryptozombies.io/en/lesson/3/share/Greg?id=Y3p8MTkwNjQ0
+
+lesson 4: payable,
