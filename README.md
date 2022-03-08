@@ -28,4 +28,4 @@ storage cost, for loops, redid lesson 3 to make sure i hadnt missed anything as 
 
 https://share.cryptozombies.io/en/lesson/3/share/Greg?id=Y3p8MTkwNjQ0
 
-lesson 4: payable,
+lesson 4: payable, random numbers, refactoring common logic,
