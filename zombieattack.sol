@@ -14,5 +14,19 @@ contract ZombieAttack is ZombieHelper {
         //
     } // this isnt really a secure way to generat random numbers, but it doesnt matter too much for this game.
 
-    function attack(uint256 _zombieId, uint256 _targetId) external {}
+   function attack(uint _zombieId, uint _targetId) external ownerOf(_zombieId) {
+    Zombie storage myZombie = zombies[_zombieId];
+    Zombie storage enemyZombie = zombies[_targetId];
+    uint rand = randMod(100);
+    if (rand <= attackVictoryProbability) {
+      myZombie.winCount++;
+      myZombie.level++;
+      enemyZombie.lossCount++;
+      feedAndMultiply(_zombieId, enemyZombie.dna, "zombie") //from zombiefeeding.sol, we need zombieId, targetDna, and a string.
+    } else {
+      myZombie.lossCount++;
+      enemyZombie.winCount++;
+      _triggerCooldown(myZombie);
+
+    }
 }

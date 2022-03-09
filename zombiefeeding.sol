@@ -36,6 +36,11 @@ contract ZombieFeeding is ZombieFactory {
         kittyContract = KittyInterface(_address);
     }
 
+    modifier ownerOf(uint256 _zombieId) {
+        require(msg.sender == zombieToOwner[_zombieId]); //creating an "ownerOf" modifier to use later to check if the body is true before executing the called fucntion
+        _;
+    }
+
     function _triggerCooldown(Zombie storage _zombie) internal {
         _zombie.readyTime = uint32(now + cooldownTime);
     }
@@ -48,8 +53,8 @@ contract ZombieFeeding is ZombieFactory {
         uint256 _zombieId,
         uint256 _targetDna,
         string memory _species
-    ) internal {
-        require(msg.sender == zombieToOwner[_zombieId]);
+    ) internal ownerOf(_zombieId) {
+        //allows removal of "require(msg.sender == zombieToOwner[_zombieId]);" and makes the code neater
         Zombie storage myZombie = zombies[_zombieId];
         require(_isReady(myZombie)); //require _isReady to be
         _targetDna = _targetDna % dnaModulus;

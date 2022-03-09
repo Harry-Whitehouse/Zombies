@@ -24,8 +24,16 @@ immutability, ownable contracts, modifiers, gas, time units,
 passing structs as arguments, view functions,
 
 07/03 AS cont..:
-storage cost, for loops, redid lesson 3 to make sure i hadnt missed anything as i hadnt had much time to work on it properly.
+storage cost, for loops,
+
+08/03 redid lesson 3 to make sure i hadnt missed anything as i hadnt had much time to work on it properly.
 
 https://share.cryptozombies.io/en/lesson/3/share/Greg?id=Y3p8MTkwNjQ0
 
 lesson 4: payable, random numbers, refactoring common logic,
+
+09/03 refactoring,
+
+https://share.cryptozombies.io/en/lesson/4/share/Greg?id=WyJjenwxOTA2NDQiLDEsMTRd
+
+erc271,
