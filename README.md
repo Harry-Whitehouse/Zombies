@@ -36,4 +36,4 @@ lesson 4: payable, random numbers, refactoring common logic,
 
 https://share.cryptozombies.io/en/lesson/4/share/Greg?id=WyJjenwxOTA2NDQiLDEsMTRd
 
-erc271,
+erc721 - NFT's,

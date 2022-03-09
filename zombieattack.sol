@@ -14,7 +14,7 @@ contract ZombieAttack is ZombieHelper {
         //
     } // this isnt really a secure way to generat random numbers, but it doesnt matter too much for this game.
 
-   function attack(uint _zombieId, uint _targetId) external ownerOf(_zombieId) {
+   function attack(uint _zombieId, uint _targetId) external onlyOwnerOf(_zombieId) {
     Zombie storage myZombie = zombies[_zombieId];
     Zombie storage enemyZombie = zombies[_targetId];
     uint rand = randMod(100);

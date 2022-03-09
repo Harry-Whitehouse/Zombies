@@ -31,12 +31,12 @@ contract ZombieFeeding is ZombieFactory {
 
     KittyInterface kittyContract; //declare the variable
 
-    function setKittyContractAddress(address _address) external ownerOnly {
+    function setKittyContractAddress(address _address) external onlyOwner {
         //fucntion allows the owner(contract deployer) to change the address in furture if required
         kittyContract = KittyInterface(_address);
     }
 
-    modifier ownerOf(uint256 _zombieId) {
+    modifier onlyOwnerOf(uint256 _zombieId) {
         require(msg.sender == zombieToOwner[_zombieId]); //creating an "ownerOf" modifier to use later to check if the body is true before executing the called fucntion
         _;
     }
@@ -53,7 +53,7 @@ contract ZombieFeeding is ZombieFactory {
         uint256 _zombieId,
         uint256 _targetDna,
         string memory _species
-    ) internal ownerOf(_zombieId) {
+    ) internal onlyOwnerOf(_zombieId) {
         //allows removal of "require(msg.sender == zombieToOwner[_zombieId]);" and makes the code neater
         Zombie storage myZombie = zombies[_zombieId];
         require(_isReady(myZombie)); //require _isReady to be
