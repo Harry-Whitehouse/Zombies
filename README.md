@@ -39,3 +39,5 @@ https://share.cryptozombies.io/en/lesson/4/share/Greg?id=WyJjenwxOTA2NDQiLDEsMTR
 erc721 - NFT's, safemath, natspec
 
 https://share.cryptozombies.io/en/lesson/5/share/H4XF13LD_MORRIS_💯💯😎💯💯?id=Y3p8MTkwNjQ0
+
+10/03 web3.js intro
