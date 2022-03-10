@@ -23,7 +23,7 @@ contract ZombieHelper is ZombieFeeding {
     function levelUp(uint256 _zombieId) external payable {
         //using level up fee
         require(msg.value == levelUpFee);
-        zombies[_zombieId].level++;
+        zombies[_zombieId].level = zombies[_zombieId].level.add(1);
     }
 
     function changeName(uint256 _zombieId, string calldata _newName)
@@ -52,7 +52,7 @@ contract ZombieHelper is ZombieFeeding {
         for (uint256 i = 0; i < zombies.length; i++) {
             if (zombieToOwner[i] == _owner) {
                 result[counter] = i;
-                counter++;
+                counter = counter.add(1);
             }
         }
         return result;
